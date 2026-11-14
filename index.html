@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUDI · Compra fácil, vive mejor</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="strip"></div>
+<div class="promo">Envíos en La Paz · Retira en un punto de entrega o pide a domicilio · <b>Oferta de la semana en productos marcados</b></div>
+<header><div class="wrap hd">
+  <img src="logo/logo_roudi.png" alt="ROUDI, compra fácil, vive mejor. La Paz, Bolivia">
+  <div class="search"><input id="q" type="search" placeholder="Buscar productos" aria-label="Buscar productos"></div>
+  <button class="cartbtn" id="open" aria-label="Abrir carrito">Carrito<span id="count">0</span></button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>Compra fácil, vive mejor.</h1>
+      <p>Tu tienda en línea de La Paz. Elige tus productos, confirma por WhatsApp y recíbelos donde te quede más cómodo.</p>
+      <a class="btn" href="#catalogo">Ver productos</a><a class="btn alt" href="#como">Cómo comprar</a>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div>Del Illimani a tu puerta<small>Compras seguras desde La Paz</small></div>
+      <svg viewBox="0 0 400 90" preserveAspectRatio="none" height="90"><path d="M0 90V58l50-36 36 26 48-42 60 52 40-28 60 44 50-30 56 36v40z" fill="#fff" opacity=".18"/><path d="M0 90V70l70-26 50 30 60-34 70 40 60-24 90 30v34z" fill="#fff" opacity=".12"/></svg>
+    </div>
+  </section>
+
+  <section class="how" id="como" aria-label="Cómo comprar">
+    <div><b>Elige</b><span>Explora el catálogo y agrega al carrito.</span></div>
+    <div><b>Confirma</b><span>Envía tu pedido por WhatsApp.</span></div>
+    <div><b>Paga</b><span>Efectivo, transferencia o QR.</span></div>
+    <div><b>Recibe</b><span>En el punto de entrega que elijas.</span></div>
+  </section>
+
+  <section id="catalogo">
+    <h2>Productos</h2>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer><div class="wrap"><b>ROUDI</b> · La Paz, Bolivia<br><small>Tienda en construcción: los productos mostrados son de ejemplo. Precios en bolivianos (Bs).</small></div></footer>
+
+<div id="shade"></div>
+<aside id="drawer" aria-label="Carrito de compras" aria-hidden="true">
+  <div class="dh"><h2>Tu pedido</h2><button class="x" id="close" aria-label="Cerrar carrito">×</button></div>
+  <div id="items"></div>
+  <div class="f">
+    <label>Tu nombre<input id="nm" autocomplete="name"></label>
+    <label>Punto de entrega<select id="pt"></select></label>
+    <label>Forma de pago<select id="pay"><option>Efectivo</option><option>Transferencia</option><option>QR</option></select></label>
+  </div>
+  <div class="tot"><span>Total</span><span id="total">Bs 0.00</span></div>
+  <a class="wa off" id="wa" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+  <p class="note">Confirmaremos disponibilidad y el costo de envío por WhatsApp antes de cobrar.</p>
+</aside>
+<div id="toast" role="status"></div>
+
+<script src="js/datos.js"></script>
+<script src="js/tienda.js"></script>
+</body>
+</html>

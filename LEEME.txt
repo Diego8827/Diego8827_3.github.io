@@ -1,0 +1,28 @@
+ROUDI · Tienda en línea (sitio estático)
+
+CONTENIDO
+  index.html        Página de inicio de la tienda
+  css/estilos.css   Diseño (colores y estilos de ROUDI)
+  js/datos.js       DATOS: WhatsApp, puntos de entrega y productos (edita aquí)
+  js/tienda.js      Funcionamiento del catálogo y del carrito
+  logo/logo_roudi.png  Logotipo
+
+CÓMO PROBARLA
+  Descomprime la carpeta y abre index.html con doble clic.
+
+CÓMO CAMBIAR LOS DATOS (js/datos.js)
+  WHATSAPP  Número con código de país, sin + ni espacios (Bolivia: 591XXXXXXXX).
+  POINTS    Lista de puntos de entrega (estaciones del teleférico).
+  P         Lista de productos. Cada uno lleva:
+            id, n (nombre), d (descripción), p (precio), o (precio de oferta,
+            opcional), c (categoría) y e (emoji que se muestra).
+
+CÓMO PUBLICARLA
+  Sube TODA la carpeta (manteniendo las subcarpetas) a un hosting estático:
+  Netlify, GitHub Pages, Cloudflare Pages o cualquier hosting con cPanel.
+  El archivo principal debe llamarse index.html.
+
+LÍMITES DE ESTA VERSIÓN
+  Los pedidos se envían por WhatsApp. No guarda pedidos, clientes ni ventas en
+  una base de datos. El panel de administración, los reportes y el login
+  requieren un servidor con base de datos y no están incluidos en este paquete.
