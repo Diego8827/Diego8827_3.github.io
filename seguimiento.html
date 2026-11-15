@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seguir mi pedido · ROUDI</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header><div class="wrap hd"><a href="./"><img src="logo/logo_roudi.png" alt="ROUDI, volver al inicio"></a></div></header>
+<main class="wrap narrow">
+  <h1>Seguir mi pedido</h1>
+  <div class="box">
+    <label for="num">Número de pedido</label><input id="num" placeholder="R-00001" autocomplete="off">
+    <label for="tel">Celular con el que hiciste el pedido</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel">
+    <button class="btn" id="go">Consultar</button>
+  </div>
+  <div id="res" aria-live="polite"></div>
+  <p><a href="./">← Volver a la tienda</a></p>
+</main>
+<script src="js/seguimiento.js"></script>
+</body>
+</html>

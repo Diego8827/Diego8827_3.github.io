@@ -8,18 +8,19 @@
 </head>
 <body>
 <div class="strip"></div>
-<div class="promo">Envíos en La Paz · Retira en un punto de entrega o pide a domicilio · <b>Oferta de la semana en productos marcados</b></div>
+<div class="promo" id="banner">Envíos en La Paz · Retira en un punto de entrega o pide a domicilio · <b>Oferta de la semana en productos marcados</b></div>
 <header><div class="wrap hd">
-  <img src="logo/logo_roudi.png" alt="ROUDI, compra fácil, vive mejor. La Paz, Bolivia">
-  <div class="search"><input id="q" type="search" placeholder="Buscar productos" aria-label="Buscar productos"></div>
+  <img id="logo" src="logo/logo_roudi.png" alt="ROUDI, compra fácil, vive mejor. La Paz, Bolivia">
+  <div class="search"><input id="q" type="search" placeholder="Buscar" aria-label="Buscar productos"></div>
+  <a class="track" href="seguimiento.html">Seguir pedido</a>
   <button class="cartbtn" id="open" aria-label="Abrir carrito">Carrito<span id="count">0</span></button>
 </div></header>
 
 <main class="wrap">
   <section class="hero">
     <div>
-      <h1>Compra fácil, vive mejor.</h1>
-      <p>Tu tienda en línea de La Paz. Elige tus productos, confirma por WhatsApp y recíbelos donde te quede más cómodo.</p>
+      <h1 id="ht">Compra fácil, vive mejor.</h1>
+      <p id="hx">Tu tienda en línea de La Paz. Elige tus productos, confirma por WhatsApp y recíbelos donde te quede más cómodo.</p>
       <a class="btn" href="#catalogo">Ver productos</a><a class="btn alt" href="#como">Cómo comprar</a>
     </div>
     <div class="art" aria-hidden="true">
@@ -42,7 +43,7 @@
   </section>
 </main>
 
-<footer><div class="wrap"><b>ROUDI</b> · La Paz, Bolivia<br><small>Tienda en construcción: los productos mostrados son de ejemplo. Precios en bolivianos (Bs).</small></div></footer>
+<footer><div class="wrap"><b>ROUDI</b> · La Paz, Bolivia<br><small id="ft">Precios en bolivianos (Bs).</small><p class="links"><a href="seguimiento.html">Seguir mi pedido</a> · <a href="legal.html">Términos, devoluciones y privacidad</a></p></div></footer>
 
 <div id="shade"></div>
 <aside id="drawer" aria-label="Carrito de compras" aria-hidden="true">
@@ -50,13 +51,17 @@
   <div id="items"></div>
   <div class="f">
     <label>Tu nombre<input id="nm" autocomplete="name"></label>
+    <label>Tu celular (para coordinar la entrega)<input id="ph" type="tel" autocomplete="tel" inputmode="tel"></label>
     <label>Punto de entrega<select id="pt"></select></label>
+    <label>Fecha de entrega<input id="dt" type="date"></label>
+    <label>Horario<select id="sl"></select></label>
     <label>Forma de pago<select id="pay"><option>Efectivo</option><option>Transferencia</option><option>QR</option></select></label>
   </div>
   <div class="tot"><span>Total</span><span id="total">Bs 0.00</span></div>
   <a class="wa off" id="wa" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
   <p class="note">Confirmaremos disponibilidad y el costo de envío por WhatsApp antes de cobrar.</p>
 </aside>
+<dialog id="done" aria-label="Pedido registrado"></dialog>
 <div id="toast" role="status"></div>
 
 <script src="js/datos.js"></script>
