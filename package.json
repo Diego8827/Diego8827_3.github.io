@@ -1,0 +1,9 @@
+{
+  "name": "roudi-tienda",
+  "version": "1.0.0",
+  "description": "Tienda en línea ROUDI con panel de administración",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "recuperar-admin": "node server.js --reset-admin" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}

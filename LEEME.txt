@@ -1,28 +1,79 @@
-ROUDI · Tienda en línea (sitio estático)
+ROUDI · Tienda en línea con panel de administración
+====================================================
 
-CONTENIDO
-  index.html        Página de inicio de la tienda
-  css/estilos.css   Diseño (colores y estilos de ROUDI)
-  js/datos.js       DATOS: WhatsApp, puntos de entrega y productos (edita aquí)
-  js/tienda.js      Funcionamiento del catálogo y del carrito
-  logo/logo_roudi.png  Logotipo
+REQUISITO
+  Instalar Node.js 18 o superior (https://nodejs.org). No hay que instalar nada más.
 
-CÓMO PROBARLA
-  Descomprime la carpeta y abre index.html con doble clic.
+CÓMO INICIARLA
+  Windows:   doble clic en iniciar.bat
+  Mac/Linux: abrir una terminal en esta carpeta y ejecutar:  node server.js
 
-CÓMO CAMBIAR LOS DATOS (js/datos.js)
-  WHATSAPP  Número con código de país, sin + ni espacios (Bolivia: 591XXXXXXXX).
-  POINTS    Lista de puntos de entrega (estaciones del teleférico).
-  P         Lista de productos. Cada uno lleva:
-            id, n (nombre), d (descripción), p (precio), o (precio de oferta,
-            opcional), c (categoría) y e (emoji que se muestra).
+  La primera vez, en la ventana aparece el USUARIO y la CONTRASEÑA del administrador.
+  Anótala. Cámbiala al entrar (Configuración > Mi contraseña).
 
-CÓMO PUBLICARLA
-  Sube TODA la carpeta (manteniendo las subcarpetas) a un hosting estático:
-  Netlify, GitHub Pages, Cloudflare Pages o cualquier hosting con cPanel.
-  El archivo principal debe llamarse index.html.
+  Tienda:         http://localhost:3000
+  Administración: http://localhost:3000/admin
+  ACCESO OCULTO:  en la tienda, toca 3 veces seguidas el logotipo y se abre el
+                  inicio de sesión (usuario y contraseña). Sin ellos no se puede
+                  entrar ni ver datos.
+
+PRIMEROS PASOS EN EL PANEL
+  1. Configuración: cambia tu contraseña, escribe el WhatsApp real (con código de
+     país, sin +), las instrucciones de pago y sube tu QR de cobro.
+  2. Categorías y Productos: crea tus productos con fotos y publícalos.
+  3. Puntos de entrega: registra los puntos cerca de las estaciones con dirección
+     y horario exactos.
+  4. Repartidores: agrega a tu equipo con su celular.
+  5. Usuarios: crea usuarios «Editor» para el personal (Configuración).
+
+PARA EL CLIENTE
+  - Elige productos, celular, fecha y horario de entrega.
+  - Al enviar, el pedido queda REGISTRADO en el panel y ve las instrucciones de
+    pago y el QR; luego abre WhatsApp con el pedido ya escrito.
+  - «Seguir pedido»: con su número de pedido y celular ve el estado
+    (recibido, pago confirmado, en camino, entregado).
+  - Página legal.html con términos, devoluciones y privacidad. ES UN BORRADOR:
+    edítalo y revísalo con un contador o abogado antes de publicar.
+
+QUÉ INCLUYE EL PANEL
+  Productos ........ crear, editar, duplicar, publicar y eliminar; fotos múltiples;
+                     historial de precios.
+  Ofertas .......... % o importe fijo, fechas, productos o categorías, campañas;
+                     bloquea precios bajo el margen mínimo salvo autorización.
+  Pedidos .......... los de la tienda llegan solos; al llegar uno nuevo el panel
+                     suena y muestra un aviso (con el panel abierto, tras haber
+                     hecho clic en la página al menos una vez).
+  Asistente ........ más cotizados, alertas de AGOTADOS y POR AGOTAR con botón que
+                     abre WhatsApp con el mensaje listo, y agenda diaria de entregas
+                     por repartidor y horario (con asignación automática).
+  Reportes ......... ventas diarias/semanales/mensuales, más y menos vendidos,
+                     inventario, pendientes, por categoría, costos y utilidad.
+                     Descarga en CSV, Excel (.xlsx) y PDF (el PDF lleva el logo).
+  Configuración .... margen mínimo, alerta de stock, WhatsApp, textos de portada,
+                     datos de pago y QR, usuarios y roles, respaldo y registro de
+                     actividad descargable.
+
+RESPALDOS
+  El servidor copia los datos solo cada 6 horas en datos/respaldos (guarda 14 días).
+  Esa copia está en el mismo equipo: copia también la carpeta datos/ a otro lugar
+  (nube, disco externo) con frecuencia. En Configuración puedes descargar un
+  respaldo en JSON.
+
+CONTRASEÑA OLVIDADA DEL ADMINISTRADOR
+  Con la tienda detenida, ejecuta:  node server.js --reset-admin
+
+PUBLICARLA EN INTERNET
+  Necesita un servidor que ejecute Node.js (VPS, Render, Railway, Fly.io, etc.).
+  Sube toda esta carpeta; comando de inicio: node server.js (usa la variable PORT
+  si el servicio la define). Importante:
+   - Usa HTTPS (esos servicios lo incluyen). Sin HTTPS la contraseña viaja sin protección.
+   - El disco debe ser persistente, o se pierde la carpeta datos/.
+   - Netlify o GitHub Pages NO sirven para el panel.
 
 LÍMITES DE ESTA VERSIÓN
-  Los pedidos se envían por WhatsApp. No guarda pedidos, clientes ni ventas en
-  una base de datos. El panel de administración, los reportes y el login
-  requieren un servidor con base de datos y no están incluidos en este paquete.
+  - Los mensajes de WhatsApp (alertas, agendas, pedido del cliente) se envían con un
+    clic: se abre WhatsApp con el texto listo. No salen solos: eso requiere la API
+    de WhatsApp Business (cuenta y credenciales de Meta).
+  - El archivo Excel lleva título, fecha, período y totales, pero no la imagen del
+    logo; el PDF sí la lleva.
+  - No cobra en línea: el pago se confirma a mano (cambiando el estado del pedido).
